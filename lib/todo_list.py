@@ -1,19 +1,19 @@
-class Todo:
-    # Public Properties:
-    #   task: a string representing the task to be done
-    #   complete: a boolean representing whether the task is complete
+class TodoList:
+    def __init__(self):
+        self._todos = []
 
-    def __init__(self, task):
-        # Parameters:
-        #   task: a string representing the task to be done
-        # Side-effects:
-        #   Sets the task property
-        #   Sets the complete property to False
-        pass
+    def add(self, todo):
+        self._todos.append(todo)
 
-    def mark_complete(self):
+    def incomplete(self):
+        return [todos for todos in self._todos if todos.complete == False]
+
+    def complete(self):
+        return [todos for todos in self._todos if todos.complete == True]
+
+    def give_up(self):
         # Returns:
         #   Nothing
         # Side-effects:
-        #   Sets the complete property to True
+        #   Marks all todos as complete
         pass

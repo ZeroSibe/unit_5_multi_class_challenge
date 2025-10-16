@@ -1,29 +1,11 @@
-class TodoList:
-    def __init__(self):
-        pass
+class Todo:
+    # Public Properties:
+    #   task: a string representing the task to be done
+    #   complete: a boolean representing whether the task is complete
 
-    def add(self, todo):
-        # Parameters:
-        #   todo: an instance of Todo
-        # Returns:
-        #   Nothing
-        # Side-effects:
-        #   Adds the todo to the list of todos
-        pass
+    def __init__(self, task):
+        self.task = task
+        self.complete = False
 
-    def incomplete(self):
-        # Returns:
-        #   A list of Todo instances representing the todos that are not complete
-        pass
-
-    def complete(self):
-        # Returns:
-        #   A list of Todo instances representing the todos that are complete
-        pass
-
-    def give_up(self):
-        # Returns:
-        #   Nothing
-        # Side-effects:
-        #   Marks all todos as complete
-        pass
+    def mark_complete(self):
+        self.complete = True
