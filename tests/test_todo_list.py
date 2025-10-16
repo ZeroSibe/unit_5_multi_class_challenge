@@ -13,9 +13,9 @@ def test_initially_has_no_incomplete_todos():
 Initially, #complete todos is an empty list
 """
 
-def test_initially_has_no_incomplete_todos():
+def test_initially_has_no_complete_todos():
     todo_list = TodoList()
-    assert todo_list.incomplete() == []
+    assert todo_list.complete() == []
 
 """
 Initially, #give_up raises error

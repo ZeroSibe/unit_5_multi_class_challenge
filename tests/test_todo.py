@@ -1,3 +1,4 @@
+import pytest
 from lib.todo import Todo
 
 """
@@ -22,3 +23,16 @@ def test_mark_complete_task_and_get_complete_status_false():
     assert todo.task == 'task 1'
     assert todo.complete == True
 
+"""
+Given an invalid task,
+Throws error 
+"""
+def test_invalid_task_entry_raises_error():
+    with pytest.raises(TypeError) as e:
+        todo = Todo(123)
+    assert str(e.value) == "Invalid task entry, please provide a string"
+
+def test_empty_task_entry_raises_error():
+    with pytest.raises(Exception) as e:
+        todo = Todo("")
+    assert str(e.value) == "No task provided"
