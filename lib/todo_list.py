@@ -12,8 +12,6 @@ class TodoList:
         return [todos for todos in self._todos if todos.complete == True]
 
     def give_up(self):
-        # Returns:
-        #   Nothing
-        # Side-effects:
-        #   Marks all todos as complete
-        pass
+        if self._todos == []:
+            raise Exception('No tasks added yet')
+        [setattr(todos, 'complete', True) for todos in self._todos]
